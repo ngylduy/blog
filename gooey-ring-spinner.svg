@@ -1,0 +1,51 @@
+
+<svg class="lds-gooeyring" width="200px" height="200px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="animation-play-state: running; animation-delay: 0s; background: none;"><defs style="animation-play-state: running; animation-delay: 0s;">
+     <filter id="gooey" x="-100%" y="-100%" width="300%" height="300%" color-interpolation-filters="sRGB" style="animation-play-state: running; animation-delay: 0s;">
+       <feGaussianBlur in="SourceGraphic" stdDeviation="4" style="animation-play-state: running; animation-delay: 0s;"></feGaussianBlur>
+<feComponentTransfer result="cutoff" style="animation-play-state: running; animation-delay: 0s;">
+  <feFuncA type="linear" slope="10" intercept="-5" style="animation-play-state: running; animation-delay: 0s;"></feFuncA>
+</feComponentTransfer>
+     </filter>
+   </defs><g filter="url(#gooey)" style="animation-play-state: running; animation-delay: 0s;"><g transform="translate(50 50)" style="animation-play-state: running; animation-delay: 0s;">
+<g transform="rotate(258)" style="animation-play-state: running; animation-delay: 0s;">
+  <circle cx="25" cy="0" r="10.5333" fill="#fcb711" style="animation-play-state: running; animation-delay: 0s;">
+    <animate attributeName="r" keyTimes="0;0.5;1" values="6;14;6" dur="4s" repeatCount="indefinite" begin="-4s" style="animation-play-state: running; animation-delay: 0s;"></animate>
+  </circle>
+  <animateTransform attributeName="transform" type="rotate" keyTimes="0;1" values="0;360" dur="4s" repeatCount="indefinite" begin="0s" style="animation-play-state: running; animation-delay: 0s;"></animateTransform>
+</g>
+</g><g transform="translate(50 50)" style="animation-play-state: running; animation-delay: 0s;">
+<g transform="rotate(276)" style="animation-play-state: running; animation-delay: 0s;">
+  <circle cx="25" cy="0" r="7.6" fill="#f37021" style="animation-play-state: running; animation-delay: 0s;">
+    <animate attributeName="r" keyTimes="0;0.5;1" values="6;14;6" dur="2s" repeatCount="indefinite" begin="-3.3333333333333335s" style="animation-play-state: running; animation-delay: 0s;"></animate>
+  </circle>
+  <animateTransform attributeName="transform" type="rotate" keyTimes="0;1" values="0;360" dur="2s" repeatCount="indefinite" begin="-0.6666666666666666s" style="animation-play-state: running; animation-delay: 0s;"></animateTransform>
+</g>
+</g><g transform="translate(50 50)" style="animation-play-state: running; animation-delay: 0s;">
+<g transform="rotate(54)" style="animation-play-state: running; animation-delay: 0s;">
+  <circle cx="25" cy="0" r="8.4" fill="#cc004c" style="animation-play-state: running; animation-delay: 0s;">
+    <animate attributeName="r" keyTimes="0;0.5;1" values="6;14;6" dur="1.3333333333333333s" repeatCount="indefinite" begin="-2.6666666666666665s" style="animation-play-state: running; animation-delay: 0s;"></animate>
+  </circle>
+  <animateTransform attributeName="transform" type="rotate" keyTimes="0;1" values="0;360" dur="1.3333333333333333s" repeatCount="indefinite" begin="-1.3333333333333333s" style="animation-play-state: running; animation-delay: 0s;"></animateTransform>
+</g>
+</g><g transform="translate(50 50)" style="animation-play-state: running; animation-delay: 0s;">
+<g transform="rotate(312)" style="animation-play-state: running; animation-delay: 0s;">
+  <circle cx="25" cy="0" r="8.13333" fill="#6460aa" style="animation-play-state: running; animation-delay: 0s;">
+    <animate attributeName="r" keyTimes="0;0.5;1" values="6;14;6" dur="1s" repeatCount="indefinite" begin="-2s" style="animation-play-state: running; animation-delay: 0s;"></animate>
+  </circle>
+  <animateTransform attributeName="transform" type="rotate" keyTimes="0;1" values="0;360" dur="1s" repeatCount="indefinite" begin="-2s" style="animation-play-state: running; animation-delay: 0s;"></animateTransform>
+</g>
+</g><g transform="translate(50 50)" style="animation-play-state: running; animation-delay: 0s;">
+<g transform="rotate(330)" style="animation-play-state: running; animation-delay: 0s;">
+  <circle cx="25" cy="0" r="10" fill="#0089d0" style="animation-play-state: running; animation-delay: 0s;">
+    <animate attributeName="r" keyTimes="0;0.5;1" values="6;14;6" dur="0.8s" repeatCount="indefinite" begin="-1.3333333333333333s" style="animation-play-state: running; animation-delay: 0s;"></animate>
+  </circle>
+  <animateTransform attributeName="transform" type="rotate" keyTimes="0;1" values="0;360" dur="0.8s" repeatCount="indefinite" begin="-2.6666666666666665s" style="animation-play-state: running; animation-delay: 0s;"></animateTransform>
+</g>
+</g><g transform="translate(50 50)" style="animation-play-state: running; animation-delay: 0s;">
+<g transform="rotate(108)" style="animation-play-state: running; animation-delay: 0s;">
+  <circle cx="25" cy="0" r="10.8" fill="#0db14b" style="animation-play-state: running; animation-delay: 0s;">
+    <animate attributeName="r" keyTimes="0;0.5;1" values="6;14;6" dur="0.6666666666666666s" repeatCount="indefinite" begin="-0.6666666666666666s" style="animation-play-state: running; animation-delay: 0s;"></animate>
+  </circle>
+  <animateTransform attributeName="transform" type="rotate" keyTimes="0;1" values="0;360" dur="0.6666666666666666s" repeatCount="indefinite" begin="-3.3333333333333335s" style="animation-play-state: running; animation-delay: 0s;"></animateTransform>
+</g>
+</g></g></svg>
