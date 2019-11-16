@@ -1,0 +1,18 @@
+<svg class="lds-coolors" width="200px"  height="200px"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="background: none;"><defs>
+ <mask id="coolors-ab0711bf24b3b">
+   <circle cx="50" cy="50" r="20" stroke="#fff" stroke-linecap="round" stroke-dasharray="94.24777960769379 31.41592653589793" stroke-width="8" transform="rotate(6.41448 50 50)">
+     <animateTransform attributeName="transform" type="rotate" values="0 50 50;360 50 50" times="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+   </circle>
+ </mask>
+</defs>
+<g mask="url(#coolors-ab0711bf24b3b)"><rect x="21.5" y="0" width="12.2" height="100">
+  <animate attributeName="fill" values="#4449dd;#4d4fe4;#5655eb;#5b5ef2;#6661fa" times="0;0.25;0.5;0.75;1" dur="1s" repeatCount="indefinite" begin="-0.8s"></animate>
+</rect><rect x="32.7" y="0" width="12.2" height="100">
+  <animate attributeName="fill" values="#4449dd;#4d4fe4;#5655eb;#5b5ef2;#6661fa" times="0;0.25;0.5;0.75;1" dur="1s" repeatCount="indefinite" begin="-0.6s"></animate>
+</rect><rect x="43.9" y="0" width="12.2" height="100">
+  <animate attributeName="fill" values="#4449dd;#4d4fe4;#5655eb;#5b5ef2;#6661fa" times="0;0.25;0.5;0.75;1" dur="1s" repeatCount="indefinite" begin="-0.4s"></animate>
+</rect><rect x="55.099999999999994" y="0" width="12.2" height="100">
+  <animate attributeName="fill" values="#4449dd;#4d4fe4;#5655eb;#5b5ef2;#6661fa" times="0;0.25;0.5;0.75;1" dur="1s" repeatCount="indefinite" begin="-0.2s"></animate>
+</rect><rect x="66.3" y="0" width="12.2" height="100">
+  <animate attributeName="fill" values="#4449dd;#4d4fe4;#5655eb;#5b5ef2;#6661fa" times="0;0.25;0.5;0.75;1" dur="1s" repeatCount="indefinite" begin="0s"></animate>
+</rect></g></svg>
