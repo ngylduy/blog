@@ -1,0 +1,21 @@
+{
+  "short_name": "Tôi Là Blogger",
+  "name": "Tôi Là Blogger - Chia sẻ thủ thuật và kiến thức",
+  "icons": [
+    {
+      "src": "https://lh3.ggpht.com/-ixvOdAWIGTw/XPVOx_VUbuI/AAAAAAAAHAU/wYhj5rr0x4Ah5x97hb7cbJEj33FyvIeeQCLcBGAs/w192-h192-p-k-no-nu/received_432586987304534.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://lh3.ggpht.com/-ixvOdAWIGTw/XPVOx_VUbuI/AAAAAAAAHAU/wYhj5rr0x4Ah5x97hb7cbJEj33FyvIeeQCLcBGAs/w512-h512-p-k-no-nu/received_432586987304534.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https://www.toilablogger.net/search/",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "https://www.toilablogger.net/search/",
+  "theme_color": "#ffffff"
+}
