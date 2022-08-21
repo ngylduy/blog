@@ -1,7 +1,3 @@
-
-
-
-
 if ('undefined' != typeof xAo) {
     function ld_Adsense() {
         var u = document.createElement('script');
