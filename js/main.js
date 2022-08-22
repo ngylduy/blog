@@ -48,7 +48,7 @@ Defer(function () {
                 if (_0x4d028a >= 0) {
                     var e = _0x523c11[_0x4d028a];
                     if (1 == e.active) {
-                        var f = e.act1,
+                        var f = e.act,
                             atr1 = e.atr,
                             cls1 = e.cls,
                             css1 = e.css,
