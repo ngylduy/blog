@@ -1,3 +1,4 @@
+var loadOwl = 0
 function shortCodeNld(e, t, a) {
     for (var s = e.split("$"), o = /[^{\}]+(?=})/g, r = 0; r < s.length; r++) {
         var i = s[r].split("=");
@@ -60,6 +61,7 @@ function getPostAuthor(e, t, a) {
 }
 function nldOwlSlider(e) {
     if (loadOwl == 0) {
+        loadOwl = 1
         loadJs('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', 'olCarousel', 'body', function () {
             e.find(".owl-carousel").owlCarousel({
                 item: 3,
@@ -164,7 +166,6 @@ function getPostComments(e, t, a, s) {
     return (r.match("//img1.blogblog.com/img/blank.gif") || r.match("//img1.blogblog.com/img/b16-rounded.gif")) && (r = "//4.bp.blogspot.com/-oSjP8F09qxo/Wy1J9dp7b0I/AAAAAAAACF0/ggcRfLCFQ9s2SSaeL9BFSE2wyTYzQaTyQCK4BGAYYCw/w72-h72-p-k-no-nu-rw-e30/avatar.jpg"), '<div class="cmm1-item item-' + t + '"><a class="entry-inner wrap-all-link" href="' + a + '" title="' + o + '"><span class="entry-image-wrap cmm-avatar"><span class="entry-thumb" data-image="' + r + '"></span></span><div class="entry-header"><h2 class="entry-title cmm-title">' + o + '</h2><p class="cmm-snippet excerpt">' + e + "</p></div></a></div>"
 }
 function getAjax(f, h, e, p) {
-    var loadOwl = 0
     switch (h) {
         case "msimple":
         case "trending":
