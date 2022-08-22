@@ -13,6 +13,18 @@ if ('undefined' != typeof xAo) {
     function ld_Analytics() {
         loadJs('https://www.googletagmanager.com/gtag/js?id=' + NLDtst.analytics.propertyID, 'analytics-js', 'head')
     }
+    function ld_Views() {
+        if ("" != NLDtst.realViews.databaseUrl && null != getid("fb-db") && 0 < firebase.apps.length)
+            for (var n = qSell(".nld_view"), u = firebase.database(), d = 0; d < n.length; d++) {
+                var a = n[d],
+                    r = a.getAttribute('data-id');
+                (r = u.ref("BlogID_" + data.blog.blogID + "/PostID_" + r)).once("value", function (u, d) {
+                    return function (e) {
+                        0 < (e = e.exists() ? e.val() : 0) && ("true" == NLDtst.realViews.abbreviation ? u.setAttribute('data-view', nBc.abv(e)) : u.setAttribute("data-view", e), remCt(u, "hidden")), "true" == u.getAttribute("data-add") && (u.setAttribute("data-add", !1), e = parseInt(e) + 1, d.set(e))
+                    }
+                }(a, r))
+            }
+    }
     NLDtst.adsenseAds.publisherId != '' && ('lazy' == NLDtst.adsenseAds.loadType ? ld_Adsense() : 'defer' == NLDtst.adsenseAds.loadType && Defer(function () {
         ld_Adsense()
     })), NLDtst.analytics.propertyID != '' && ('lazy' == NLDtst.analytics.loadType ? ld_Analytics() : 'defer' == NLDtst.analytics.loadType && Defer(function () {
@@ -29,15 +41,28 @@ if ('undefined' != typeof xAo) {
                 'max-age': 60
             })
         }
-    }), Defer(function () {
         loadJs('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', 'jq-lib', 'body', function () {
             loadJs(bsGtb + 'lib/' + 'mainLib.js', 'main-lib', 'body')
             loadJs(bsGtb + 'js/' + 'coreFunction.js', 'core-fun', 'body')
             loadJs(bsGtb + 'js/' + 'coreJq.js', 'core-jq', 'body')
+        }), "" != NLDtst.realViews.databaseUrl && loadJs('https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js', 'fb-app', 'head', function () {
+            loadJs('https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js', 'fb-db', 'head', function () {
+                var t = qSell(".nld_view"),
+                    n = {};
+                n.databaseURL = NLDtst.realViews.databaseUrl, firebase.initializeApp(n);
+                for (var d = firebase.database(), a = 0; a < t.length; a++) {
+                    var r = t[a],
+                        s = r.getAttribute("data-id");
+                    (s = d.ref("BlogID_" + data.blog.blogID + "/PostID_" + s)).once("value", function (u, d) {
+                        return function (e) {
+                            0 < (e = e.exists() ? e.val() : 0) && ("true" == NLDtst.realViews.abbreviation ? u.setAttribute("data-view", nBc.abv(e)) : u.setAttribute("data-view", e), remCt(u, "hidden")), "true" == u.getAttribute("data-add") && (u.setAttribute("data-add", !1), e = parseInt(e) + 1, d.set(e))
+                        }
+                    }(r, s))
+                }
+            })
         })
     })
 }
-
 Defer(function () {
         nBc.gAj({
             'url': "https://script.google.com/macros/s/AKfycbzctoWv8YWpF6AzQbDANtCz9VDV-95ALWozkyYOEEKtaqLwukbEd05YpHzFe9SZAxCN/exec",

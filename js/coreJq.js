@@ -234,7 +234,7 @@ Defer(function () {
                 url: a,
                 success: function (e) {
                     var t = $(e).find(".blog-posts");
-                    t.find(".index-post").addClass("post-animated post-fadeInUp"), $(".blog-posts").append(t.html()), (a = $(e).find("#nldmag-pro-load-more-link").data("load")) ? $("#nldmag-pro-load-more-link").show() : ($("#nldmag-pro-load-more-link").hide(), $("#blog-pager .no-more").addClass("show")), loadPostVw()
+                    t.find(".index-post").addClass("post-animated post-fadeInUp"), $(".blog-posts").append(t.html()), (a = $(e).find("#nldmag-pro-load-more-link").data("load")) ? $("#nldmag-pro-load-more-link").show() : ($("#nldmag-pro-load-more-link").hide(), $("#blog-pager .no-more").addClass("show")), ld_Views()
                 },
                 beforeSend: function () {
                     $("#blog-pager .loading").show()
