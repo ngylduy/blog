@@ -90,41 +90,13 @@ function nldOwlSlider(e) {
                     }
                 }
             })
-        })
-    } else {
-        e.find(".owl-carousel").owlCarousel({
-            item: 3,
-            rtl: false,
-            loop: !0,
-            center: !0,
-            smartSpeed: 500,
-            autoplay: 0,
-            autoplayTimeout: 5e3,
-            autoplaySpeed: 500,
-            autoplayHoverPause: !0,
-            nav: !0,
-            navText: ['<i class="rbi rbi-angle-left"></i><span>Trước</span>', '<i class="rbi rbi-angle-right"></i><span>Tiếp</span>'],
-            navClass: ['rb-owl-prev', 'rb-owl-next'],
-            navElement: 'div role="presentation"',
-            dots: !0,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                768: {
-                    items: 2
-                },
-                992: {
-                    items: 3
-                }
-            }
+            $('.owl-dot').each(function () {
+                let idx = $(this).index() + 1;
+                $(this).attr('aria-label', 'Go to slide ' + idx);
+            })
+            $("span.entry-thumb").lazynld()
         })
     }
-    $('.owl-dot').each(function () {
-        let idx = $(this).index() + 1;
-        $(this).attr('aria-label', 'Go to slide ' + idx);
-    })
-    $("span.entry-thumb").lazynld()
 }
 function getPostDate(e, t, a, s, o) {
     var r = e[t].published.$t,
