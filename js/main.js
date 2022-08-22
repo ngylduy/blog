@@ -32,6 +32,8 @@ if ('undefined' != typeof xAo) {
     }), Defer(function () {
         loadJs('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', 'jq-lib', 'body', function () {
             loadJs(bsGtb + 'lib/' + 'mainLib.js', 'main-lib', 'body')
+            loadJs(bsGtb + 'js/' + 'coreFunction.js', 'core-fun', 'body')
+            loadJs(bsGtb + 'js/' + 'coreJq.js', 'core-jq', 'body')
         })
     })
 }
@@ -60,28 +62,28 @@ Defer(function () {
                             var g = window.document.querySelectorAll(tag1);
                             for (i = 0; i < g.length; i++) '' != itx1 && (g[i].innerHTML = itx1), '' != cls1 && g[i].classList.add(cls1), '' != css1 && g[i].setAttribute("style", css1), g[i].setAttribute(atr1, url1)
                         } else {
-                            if (0x2 == f) {
+                            if (2 == f) {
                                 for (g = window.document.querySelectorAll(tag1), i = 0; i < g.length; i++) '' != itx1 && (g[i].innerHTML = itx1), '' != cls1 && g[i].classList.add(cls1), '' != css1 && g[i].setAttribute('style', css1), g[i].addEventListener('click', function () {
                                     setTimeout(function () {
                                         window.open(url1, '_blank')
                                     }, tmo1)
                                 })
                             } else {
-                                if (0x3 == f) {
+                                if (3 == f) {
                                     for (g = window['document']['querySelectorAll'](tag1), i = 0; i < g['length']; i++) '' != itx1 && (g[i]['innerHTML'] = itx1), '' != cls1 && g[i]['classList']['add'](cls1), '' != css1 && g[i]['setAttribute']('style', css1), g[i]['addEventListener']('click', function () {
                                         setTimeout(function () {
                                             window.location.href = url1
                                         }, tmo1)
                                     })
                                 } else {
-                                    if (0x4 == f) {
+                                    if (4 == f) {
                                         for (g = window['document']['querySelectorAll'](tag1), i = 0; i < g['length']; i++) '' != itx1 && (g[i]['innerHTML'] = itx1), '' != cls1 && g[i]['classList']['add'](cls1), '' != css1 && g[i]['setAttribute']('style', css1), g[i]['addEventListener']('click', function () {
                                             setTimeout(function () {
                                                 window.location.replace(url1)
                                             }, tmo1)
                                         })
                                     } else {
-                                        if (0x5 == f)
+                                        if (5 == f)
                                             for (g = window.document.querySelectorAll(tag1), i = 0; i < g['length']; i++) {
                                                 if ('' != cls1 ? (g[i].classList.add(cls1), c = ' class="' + cls1 + '\"') : c = '', '' != css1) var h = ' style="' + css1 + '\"';
                                                 else h = '';
