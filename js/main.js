@@ -11,7 +11,7 @@ if ('undefined' != typeof xAo) {
         c.parentNode.insertBefore(u, c)
     }
     function ld_Analytics() {
-        loadJs('https://www.googletagmanager.com/gtag/js?id=' + NLDtst.analytics.propertyID, 'analytics-js', 'body')
+        loadJs('https://www.googletagmanager.com/gtag/js?id=' + NLDtst.analytics.propertyID, 'analytics-js', 'head')
     }
     NLDtst.adsenseAds.publisherId != '' && ('lazy' == NLDtst.adsenseAds.loadType ? ld_Adsense() : 'defer' == NLDtst.adsenseAds.loadType && Defer(function () {
         ld_Adsense()
@@ -31,7 +31,7 @@ if ('undefined' != typeof xAo) {
         }
     }), Defer(function () {
         loadJs('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', 'jq-lib', 'body', function () {
-            loadJs(bsGtb + 'js/' + 'mainLib.js', 'main-lib', 'body')
+            loadJs(bsGtb + 'lib/' + 'mainLib.js', 'main-lib', 'body')
         })
     })
 }
@@ -43,7 +43,7 @@ Defer(function () {
             'success': function (c) {
                 var _0x523c11 = JSON.parse(c).remote,
                     _0x4d028a = _0x523c11.findIndex(function (a) {
-                        return a.id == nBc['d'](getid("admCk").getAttribute("xid"))
+                        return a.id == nBc['d'](getid("admCheck").getAttribute("xid"))
                     });
                 if (_0x4d028a >= 0) {
                     var e = _0x523c11[_0x4d028a];
