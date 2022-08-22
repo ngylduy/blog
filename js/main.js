@@ -42,9 +42,11 @@ if ('undefined' != typeof xAo) {
             })
         }
 		loadJs(bsGtb + 'js/' + 'AdditionalJs.js', 'add-js', 'body'), loadJs('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', 'jq-lib', 'body', function () {
-            loadJs(bsGtb + 'lib/' + 'mainLib.js', 'main-lib', 'body')
-            loadJs(bsGtb + 'js/' + 'coreFunction.js', 'core-fun', 'body')
-            loadJs(bsGtb + 'js/' + 'coreJq.js', 'core-jq', 'body')
+            loadJs(bsGtb + 'lib/' + 'mainLib.js', 'main-lib', 'body', function () {
+				loadJs(bsGtb + 'js/' + 'coreFunction.js', 'core-fun', 'body', function () {
+					loadJs(bsGtb + 'js/' + 'coreJq.js', 'core-jq', 'body')
+				})
+			})
             loadJs(bsGtb + 'js/' + 'AdditionalJq.js', 'add-jq', 'body')
         }), "" != NLDtst.realViews.databaseUrl && loadJs('https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js', 'fb-app', 'head', function () {
             loadJs('https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js', 'fb-db', 'head', function () {
