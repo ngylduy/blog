@@ -390,7 +390,7 @@ Defer(function () {
     }), $(".pageLoading").length > 0 && $(".pageLoading").each(function () {
         var pageLoading = $(this)
         setTimeout(function () {
-            pageLoading.addClass("done"), pageLoading.addEventListener("transitionend", function () {
+            pageLoading.addClass("done"), pageLoading.on('transitionend webkitTransitionEnd', function(){
                 pageLoading.remove()
             })
         }, 1e3)
