@@ -178,22 +178,22 @@ Defer(function () {
             })
         }
     }), data.view.isSingleItem && loadJs('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js', 'hl-jspl', 'body', function () {
-		$(".post-body pre").each(function () {
-			var e = $(this),
-				t = (e.text().toLowerCase().trim(), e.html()),
-				a = e.attr("class") || "html",
-				u = e.attr("data-text");
-			g = e.is("[data-text]") ? 'data-text="' + u + '"' : '';
-			e.is("[class]") && e.replaceWith('<div class="pre ' + a + '" ' + g + '><pre class="' + a + '">' + t + "</pre></div>")
-		}), $('.post-body .pre>pre').each(function (indx, el) {
-			var g = $(this)
-			g.is("[class]") && hljs.highlightBlock(el)
-			el.addEventListener("dblclick", function () {
-				var e = getSelection(),
-					o = document.createRange();
-				o.selectNodeContents(this), e.removeAllRanges(), e.addRange(o), document.execCommand("copy"), e.removeAllRanges(), toastNotif(NLDtst.preCopy.copiedMes)
-			}, !1)
-		})
+        $(".post-body pre").each(function () {
+            var e = $(this),
+                t = (e.text().toLowerCase().trim(), e.html()),
+                a = e.attr("class") || "html",
+                u = e.attr("data-text");
+            g = e.is("[data-text]") ? 'data-text="' + u + '"' : '';
+            e.is("[class]") && e.replaceWith('<div class="pre ' + a + '" ' + g + '><pre class="' + a + '">' + t + "</pre></div>")
+        }), $('.post-body .pre>pre').each(function (indx, el) {
+            var g = $(this)
+            g.is("[class]") && hljs.highlightBlock(el)
+            el.addEventListener("dblclick", function () {
+                var e = getSelection(),
+                    o = document.createRange();
+                o.selectNodeContents(this), e.removeAllRanges(), e.addRange(o), document.execCommand("copy"), e.removeAllRanges(), toastNotif(NLDtst.preCopy.copiedMes)
+            }, !1)
+        })
     }), data.view.isSingleItem && $(".post-body a").each(function () {
         var e = $(this),
             t = (o = e.html()).toLowerCase(),
@@ -387,5 +387,12 @@ Defer(function () {
     }), data.view.isSingleItem && $("p.comment-content").each(function () {
         var e = $(this);
         e.replaceText(/(https:\/\/\S+(\.png|\.jpeg|\.jpg|\.gif))/g, '<img src="$1"/>'), e.replaceText(/(?:https:\/\/)?(?:www\.)?(?:youtube\.com)\/(?:watch\?v=)?(.+)/g, '<div class="responsive-video-wrap"><iframe id="youtube" width="100%" height="358" src="https://www.youtube.com/embed/$1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>')
+    }), $(".pageLoading").length > 0 && $(".pageLoading").each(function () {
+        var pageLoading = $(this)
+        setTimeout(function () {
+            pageLoading.addClass("done"), pageLoading.addEventListener("transitionend", function () {
+                pageLoading.remove()
+            })
+        }, 1e3)
     })
 }, 100)
