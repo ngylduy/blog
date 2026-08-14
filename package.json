@@ -1,0 +1,25 @@
+{
+  "name": "apmody-blogger-utilities",
+  "version": "0.0.0",
+  "description": "Static CSS and JavaScript utilities for Blogger themes.",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngylduy/blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ngylduy/blog/issues"
+  },
+  "homepage": "https://github.com/ngylduy/blog#readme",
+  "scripts": {
+    "check": "node tools/check-repo.mjs"
+  },
+  "keywords": [
+    "blogger",
+    "javascript",
+    "css",
+    "widgets"
+  ]
+}

@@ -1,66 +1,118 @@
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js';
 import {
-    initializeApp
-} from 'https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js';
-import {
-    getDatabase,
-    ref,
-    child,
-    get,
-    update
+  child,
+  get,
+  getDatabase,
+  ref,
+  update,
 } from 'https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js';
-const firebaseConfig = {
-    apiKey: "AIzaSyBcXhv-UL1Bhp_KjvvkRVFTTPNmYp5ytI0",
-    authDomain: "shortlink-ebf23.firebaseapp.com",
-    databaseURL: "https://shortlink-ebf23-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "shortlink-ebf23",
-    storageBucket: "shortlink-ebf23.appspot.com",
-    messagingSenderId: "1073112615716",
-    appId: "1:1073112615716:web:8f1c3032847c33613e01b1"
-}, app = initializeApp(firebaseConfig),
-    db = getDatabase();
-const fRtdb = async () => {
-    const _0x33476d = sessionStorage.getItem("_shortL");
-    if (_0x33476d) {
-        const _0x8bdd09 = JSON.parse(_0x33476d);
-        const _0x2f2dfb = "stu/" + _0x8bdd09.by + '/' + _0x8bdd09.id + '/';
-        if (await get(child(ref(db), _0x2f2dfb + "ori")).then(_0x35a896 => !!_0x35a896.exists() && _0x35a896.val() == _0x8bdd09.ori)["catch"](() => false)) {
-            const _0x1c6885 = new Date();
-            const _0x481fc7 = _0x1c6885.getFullYear();
-            const _0x39f0ec = String(_0x1c6885.getMonth() + 0x1).padStart(0x2, '0');
-            const _0x50a938 = String(_0x1c6885.getDate()).padStart(0x2, '0');
-            const _0x52fda5 = [_0x481fc7, _0x39f0ec].join('-');
-            let _0xad9dec = await get(child(ref(db), "userLevel/" + _0x8bdd09.by + "/level")).then(_0x35ba08 => _0x35ba08.exists() && _0x35ba08.val())["catch"](() => false);
-            if (_0xad9dec) {
-                _0xad9dec = await get(child(ref(db), "config/stu/level/" + _0xad9dec + "/cpc")).then(_0x21aaa3 => _0x21aaa3.exists() ? _0x21aaa3.val() : 0x1);
-            }
-            const _0x36b654 = await get(child(ref(db), "config/stu/cpc")).then(_0x4b3ea1 => _0x4b3ea1.exists() ? _0x4b3ea1.val() : 0x1);
-            const _0x21e903 = _0xad9dec || _0x36b654;
-            document.querySelectorAll(".icdbx").forEach(_0x3db456 => {
-                _0x3db456.addEventListener("click", async () => {
-                    if (stVC() && _0x3db456.classList.contains('a')) {
-                        const _0x2d929c = await get(child(ref(db), _0x2f2dfb + "click")).then(_0x9815aa => _0x9815aa.exists() ? _0x9815aa.val() + 0x1 : 0x1)["catch"](() => 0x1);
-                        const _0x1893c0 = await get(child(ref(db), "/reports/" + _0x8bdd09.by + '/' + _0x52fda5 + '/' + _0x50a938)).then(_0x2cdbec => {
-                            let _0x1b0442 = _0x2cdbec.val();
-                            return {
-                                'click': _0x1b0442.click + 0x1,
-                                'cpc': (_0x1b0442.click * _0x1b0442.cpc + _0x21e903) / (_0x1b0442.click + 0x1)
-                            };
-                        })["catch"](() => ({
-                            'click': 0x1,
-                            'cpc': _0x21e903
-                        }));
-                        const _0x1ed745 = await get(child(ref(db), "/balance/" + _0x8bdd09.by + "/current")).then(_0x36fe55 => _0x36fe55.val() + _0x21e903)["catch"](() => _0x21e903);
-                        const _0x4c2e94 = {
-                            ['/' + _0x2f2dfb + "click"]: _0x2d929c,
-                            ["/reports/" + _0x8bdd09.by + '/' + _0x52fda5 + '/' + _0x50a938 + "/click"]: _0x1893c0.click,
-                            ["/reports/" + _0x8bdd09.by + '/' + _0x52fda5 + '/' + _0x50a938 + "/cpc"]: _0x1893c0.cpc,
-                            ["/balance/" + _0x8bdd09.by + "/current"]: _0x1ed745
-                        };
-                        update(ref(db), _0x4c2e94).then(() => inVC())["catch"](_0x360ecd => _0x360ecd.message);
-                    }
-                });
-            });
-        }
-    }
+
+// ponytail: keep legacy public Firebase web config for Blogger compatibility; migrate by defining
+// `globalThis.APMODY_FIREBASE_CONFIG` before this module loads, then remove this fallback.
+const legacyFirebaseConfig = {
+  apiKey: 'AIzaSyBcXhv-UL1Bhp_KjvvkRVFTTPNmYp5ytI0',
+  authDomain: 'shortlink-ebf23.firebaseapp.com',
+  databaseURL: 'https://shortlink-ebf23-default-rtdb.asia-southeast1.firebasedatabase.app',
+  projectId: 'shortlink-ebf23',
+  storageBucket: 'shortlink-ebf23.appspot.com',
+  messagingSenderId: '1073112615716',
+  appId: '1:1073112615716:web:8f1c3032847c33613e01b1',
 };
-fRtdb();
+
+const firebaseConfig = globalThis.APMODY_FIREBASE_CONFIG || legacyFirebaseConfig;
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+function readShortLinkSession() {
+  try {
+    const shortLinkSession = sessionStorage.getItem('_shortL');
+    return shortLinkSession ? JSON.parse(shortLinkSession) : null;
+  } catch {
+    return null;
+  }
+}
+
+async function getValue(path, fallback) {
+  try {
+    const snapshot = await get(child(ref(db), path));
+    return snapshot.exists() ? snapshot.val() : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+function buildDateKeys(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+
+  return {
+    monthKey: [year, month].join('-'),
+    todayKey: day,
+  };
+}
+
+async function resolveCpc(ownerId) {
+  let levelCpc = false;
+  const level = await getValue(`userLevel/${ownerId}/level`, false);
+
+  if (level) {
+    levelCpc = await getValue(`config/stu/level/${level}/cpc`, 1);
+  }
+
+  const defaultCpc = await getValue('config/stu/cpc', 1);
+  return levelCpc || defaultCpc;
+}
+
+async function buildReportUpdate(ownerId, monthKey, todayKey, cpc) {
+  try {
+    const report = await getValue(`/reports/${ownerId}/${monthKey}/${todayKey}`, null);
+
+    return {
+      click: report.click + 1,
+      cpc: (report.click * report.cpc + cpc) / (report.click + 1),
+    };
+  } catch {
+    return {
+      click: 1,
+      cpc,
+    };
+  }
+}
+
+async function trackClick(button, context) {
+  if (!stVC() || !button.classList.contains('a')) return;
+
+  const { shortLink, shortLinkPath, monthKey, todayKey, cpc } = context;
+  const clickCount = await getValue(`${shortLinkPath}click`, 0) + 1;
+  const report = await buildReportUpdate(shortLink.by, monthKey, todayKey, cpc);
+  const balance = await getValue(`/balance/${shortLink.by}/current`, 0) + cpc;
+
+  const updates = {
+    [`/${shortLinkPath}click`]: clickCount,
+    [`/reports/${shortLink.by}/${monthKey}/${todayKey}/click`]: report.click,
+    [`/reports/${shortLink.by}/${monthKey}/${todayKey}/cpc`]: report.cpc,
+    [`/balance/${shortLink.by}/current`]: balance,
+  };
+
+  update(ref(db), updates).then(() => inVC()).catch(error => error.message);
+}
+
+async function initRealtimeTracking() {
+  const shortLink = readShortLinkSession();
+  if (!shortLink) return;
+
+  const shortLinkPath = `stu/${shortLink.by}/${shortLink.id}/`;
+  const originalUrl = await getValue(`${shortLinkPath}ori`, false);
+  if (originalUrl !== shortLink.ori) return;
+
+  const { monthKey, todayKey } = buildDateKeys(new Date());
+  const cpc = await resolveCpc(shortLink.by);
+  const context = { shortLink, shortLinkPath, monthKey, todayKey, cpc };
+
+  document.querySelectorAll('.icdbx').forEach(button => {
+    button.addEventListener('click', () => trackClick(button, context));
+  });
+}
+
+initRealtimeTracking();
