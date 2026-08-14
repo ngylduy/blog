@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<browserconfig>
-    <msapplication>
-        <tile>
-            <square150x150logo src="https://cdn.jsdelivr.net/gh/ngylduy/blog@main/nldblog/nldblog-150.png" />
-            <TileColor>#e0ac33</TileColor>
-        </tile>
-    </msapplication>
-</browserconfig>
